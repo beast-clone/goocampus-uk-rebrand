@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GooCampus UK | Everything You Need for the PLAB Pathway</title>
+<meta name="description" content="We help medical graduates move to the UK to work as full-time doctors through the PLAB pathway — coaching, portfolio, visa and interviews, in one place." />
+
+<link rel="icon" type="image/png" href="assets/logo-color.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    container: { center: true, padding: '1.5rem', screens: { '2xl': '1200px' } },
+    extend: {
+      colors: {
+        ink:   '#233974',
+        body:  '#565F73',
+        green: '#48BB88',
+        greenLight: '#5FC19D',
+        paper: '#F7F8FA',
+        line:  'rgba(35,57,116,.12)',
+      },
+      fontFamily: {
+        serif: ['"Source Serif 4"', 'ui-serif', 'Georgia', 'serif'],
+        sans:  ['"Public Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: { btn: '10px', card: '18px' },
+    },
+  },
+}
+</script>
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body { background:#FFFFFF; color:#233974; font-family:'Public Sans',ui-sans-serif,system-ui,sans-serif;
+         -webkit-font-smoothing:antialiased; }
+
+  .display { font-family:'Source Serif 4', ui-serif, Georgia, serif; font-weight:600; }
+  .t-h1 { font-size:clamp(2.75rem,6.2vw,74px); line-height:1.04; letter-spacing:-0.02em; }
+  .t-h2 { font-size:clamp(2rem,4vw,46px);      line-height:1.12; letter-spacing:-0.015em; }
+  .t-h3 { font-size:clamp(1.375rem,2vw,26px);  line-height:1.25; letter-spacing:-0.01em; }
+  .lead { font-size:19px; line-height:31px; color:#565F73; max-width:56ch; }
+  p.copy { font-size:16px; line-height:27px; color:#565F73; max-width:66ch; }
+
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+         height:52px; padding:0 24px; border-radius:10px; font-size:15px; font-weight:600;
+         white-space:nowrap; transition:background-color .2s, color .2s, border-color .2s, transform .2s cubic-bezier(.16,1,.3,1); }
+  .btn:active { transform:translateY(1px); }
+  .btn-primary { background:#233974; color:#fff; }
+  .btn-primary:hover { background:#1a2b59; }
+  .btn-ghost { background:#fff; color:#233974; border:1.5px solid rgba(35,57,116,.18); }
+  .btn-ghost:hover { border-color:#233974; }
+
+  .eyebrow { display:inline-flex; align-items:center; gap:.5rem; font-size:13px; font-weight:600;
+             letter-spacing:.06em; text-transform:uppercase; color:#48BB88; }
+  .eyebrow::before { content:""; width:18px; height:2px; background:#48BB88; border-radius:1px; }
+
+  .rule { border-top:1px solid rgba(35,57,116,.12); }
+
+  /* Reveal: visible by default, animated FROM hidden via a class swap. Never hidden by
+     CSS alone, so a blocked script or failed animation cannot strand content invisible. */
+  .rise-in { animation:rise .7s cubic-bezier(.16,1,.3,1) both; }
+  @keyframes rise { from { opacity:0; transform:translateY(18px); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    .rise-in { animation:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<header id="nav" class="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-xl">
+  <div class="container flex h-[84px] items-center justify-between">
+    <a href="#top" class="flex items-center">
+      <img src="assets/logo-color.png" alt="GooCampus UK" width="1134" height="1134" class="h-14 w-auto" />
+    </a>
+    <nav class="hidden items-center gap-8 lg:flex">
+      <a href="#program" class="text-[15px] text-body transition hover:text-ink">The Program</a>
+      <a href="#timeline" class="text-[15px] text-body transition hover:text-ink">How It Works</a>
+      <a href="#stories" class="text-[15px] text-body transition hover:text-ink">Stories</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="https://goocampus.fillout.com/goocampus-free-consultation" target="_blank" rel="noopener noreferrer" class="btn btn-primary hidden sm:inline-flex">Free Consultation</a>
+      <button id="navToggle" class="grid h-11 w-11 place-items-center rounded-btn border border-line bg-white lg:hidden" aria-label="Menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#233974" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-line bg-white lg:hidden">
+    <div class="container flex flex-col py-3">
+      <a href="#program" class="rounded-btn px-3 py-3 text-[15px] hover:bg-paper">The Program</a>
+      <a href="#timeline" class="rounded-btn px-3 py-3 text-[15px] hover:bg-paper">How It Works</a>
+      <a href="#stories" class="rounded-btn px-3 py-3 text-[15px] hover:bg-paper">Stories</a>
+      <a href="https://goocampus.fillout.com/goocampus-free-consultation" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-2">Free Consultation</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="top" class="pt-16 pb-20 lg:pt-24 lg:pb-28">
+  <div class="container text-center">
+    <div class="rise-in flex justify-center" style="animation-delay:.05s">
+      <span class="eyebrow">PLAB Pathway Specialists</span>
+    </div>
+    <h1 class="rise-in display t-h1 mx-auto mt-6 max-w-[16ch] text-ink" style="animation-delay:.14s">
+      Everything you need to land your first doctor job in the UK
+    </h1>
+    <p class="rise-in lead mx-auto mt-7 text-center" style="animation-delay:.22s">
+      We help medical graduates, from India and abroad, move to the UK to work as full-time doctors through the PLAB pathway.
+    </p>
+    <div class="rise-in mt-9 flex flex-wrap items-center justify-center gap-3" style="animation-delay:.3s">
+      <a href="https://app.fillout.com/t/fkbJzMsWcfus" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full sm:w-auto">Download Brochure</a>
+      <a href="https://goocampus.fillout.com/goocampus-free-consultation" target="_blank" rel="noopener noreferrer" class="btn btn-ghost w-full sm:w-auto">Free Consultation</a>
+    </div>
+    <div class="rise-in mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[14px] text-body" style="animation-delay:.38s">
+      <span><strong class="display text-[17px] font-semibold text-ink">300+</strong> doctors guided</span>
+      <span class="hidden sm:inline text-line">|</span>
+      <span><strong class="display text-[17px] font-semibold text-ink">4.9/5</strong> on Google Reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section class="py-10">
+  <div class="container">
+    <div class="rule flex flex-wrap items-center justify-center gap-x-12 gap-y-4 pt-8 text-center">
+      <div>
+        <div class="display text-[32px] font-semibold text-ink">300+</div>
+        <p class="mt-1 text-[14px] text-body">doctors guided into UK jobs</p>
+      </div>
+      <div class="h-10 w-px bg-line hidden sm:block"></div>
+      <div>
+        <div class="display text-[32px] font-semibold text-ink">4.9/5</div>
+        <p class="mt-1 text-[14px] text-body">stars on Google Reviews</p>
+      </div>
+      <div class="h-10 w-px bg-line hidden sm:block"></div>
+      <div>
+        <div class="display text-[32px] font-semibold text-ink">1</div>
+        <p class="mt-1 text-[14px] text-body">team, start to first posting</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Program intro -->
+<section id="program" class="py-20 lg:py-28">
+  <div class="container">
+    <div class="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+      <div>
+        <span data-reveal class="eyebrow">Post Graduate Consulting Program</span>
+        <h2 class="display t-h2 mt-5 text-ink">The world's only all-in-one service for UK PLAB</h2>
+      </div>
+      <div class="grid gap-x-10 gap-y-9 sm:grid-cols-2">
+        <div data-reveal>
+          <h3 class="display t-h3 text-ink">Single window experience</h3>
+          <p class="copy mt-2.5">A single team to handle your coaching, portfolio and visa. All the way until interviews.</p>
+        </div>
+        <div data-reveal>
+          <h3 class="display t-h3 text-ink">Save time &amp; money</h3>
+          <p class="copy mt-2.5">Avoid common IMG mistakes to save time &amp; streamline your efforts.</p>
+        </div>
+        <div data-reveal>
+          <h3 class="display t-h3 text-ink">Visa &amp; migration</h3>
+          <p class="copy mt-2.5">EPIC, GMC and visa documentation supported by a team of experts.</p>
+        </div>
+        <div data-reveal>
+          <h3 class="display t-h3 text-ink">Job-ready portfolio</h3>
+          <p class="copy mt-2.5">Start building a job-ready portfolio with a formal, structured activity schedule.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline / milestone roadmap -->
+<section id="timeline" class="bg-paper py-20 lg:py-28">
+  <div class="container">
+    <span data-reveal class="eyebrow">Save Time, Money &amp; Effort</span>
+    <h2 class="display t-h2 mt-5 max-w-[18ch] text-ink">Your ideal timeline, mapped from day one</h2>
+    <p class="lead mt-5">Plan your learning, exams, portfolio building, visa procedures, registrations and application all within your 'ideal timeline.' Avoid last-minute planning and start every activity at the right time, to minimise your PLAB timeline.</p>
+
+    <!-- The roadmap: a connecting line through four real milestones, because the
+         product's own value proposition IS structure and sequence, not decoration. -->
+    <div class="relative mt-16">
+      <div class="pointer-events-none absolute left-[27px] top-[26px] bottom-[26px] hidden w-px bg-gradient-to-b from-green via-line to-line md:block"></div>
+
+      <div class="space-y-10 md:space-y-12">
+        <div data-reveal class="relative flex gap-6 md:gap-8">
+          <div class="relative z-[1] grid h-[54px] w-[54px] shrink-0 place-items-center rounded-full bg-white ring-2 ring-green">
+            <span class="display text-[18px] font-semibold text-ink">01</span>
+          </div>
+          <div class="pt-2.5">
+            <h3 class="display t-h3 text-ink">Create your ideal timeline</h3>
+            <p class="copy mt-2">Map every milestone against your target dates — IELTS/OET, PLAB P-1 &amp; P-2, portfolio work, visa steps — so nothing is planned at the last minute.</p>
+          </div>
+        </div>
+        <div data-reveal class="relative flex gap-6 md:gap-8">
+          <div class="relative z-[1] grid h-[54px] w-[54px] shrink-0 place-items-center rounded-full bg-white ring-2 ring-line">
+            <span class="display text-[18px] font-semibold text-ink">02</span>
+          </div>
+          <div class="pt-2.5">
+            <h3 class="display t-h3 text-ink">Structured portfolio activities</h3>
+            <p class="copy mt-2">A formal, structured activity schedule — not a checklist you improvise. Every task has a slot in your timeline.</p>
+          </div>
+        </div>
+        <div data-reveal class="relative flex gap-6 md:gap-8">
+          <div class="relative z-[1] grid h-[54px] w-[54px] shrink-0 place-items-center rounded-full bg-white ring-2 ring-line">
+            <span class="display text-[18px] font-semibold text-ink">03</span>
+          </div>
+          <div class="pt-2.5">
+            <h3 class="display t-h3 text-ink">Visa, registrations &amp; applications</h3>
+            <p class="copy mt-2">EPIC, GMC and visa documentation, managed by our team so common IMG mistakes — and the expense of fixing them — don't happen.</p>
+          </div>
+        </div>
+        <div data-reveal class="relative flex gap-6 md:gap-8">
+          <div class="relative z-[1] grid h-[54px] w-[54px] shrink-0 place-items-center rounded-full bg-ink ring-2 ring-ink">
+            <span class="display text-[18px] font-semibold text-white">04</span>
+          </div>
+          <div class="pt-2.5">
+            <h3 class="display t-h3 text-ink">Complete milestones, on schedule</h3>
+            <p class="copy mt-2">Reach every checkpoint on time, so your first UK doctor job isn't delayed by planning that should've happened months earlier.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section class="py-20 lg:py-28">
+  <div class="container">
+    <div class="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+      <div>
+        <span data-reveal class="eyebrow">Job-Ready Portfolio</span>
+        <h2 class="display t-h2 mt-5 text-ink">Stand apart with a strong, job-ready portfolio</h2>
+        <p class="copy mt-5">Start building a solid, job-ready portfolio, so by the time you appear for interviews, your profile stands out from amongst the competition.</p>
+        <ul class="mt-7 space-y-3.5">
+          <li class="flex gap-3 text-[15px] text-ink"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green"></span>Write &amp; publish high-quality research papers</li>
+          <li class="flex gap-3 text-[15px] text-ink"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green"></span>Present at international medical conferences</li>
+          <li class="flex gap-3 text-[15px] text-ink"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green"></span>Access to CPD accredited courses &amp; events</li>
+        </ul>
+      </div>
+      <div>
+        <span data-reveal class="eyebrow">Interview Ready</span>
+        <h2 class="display t-h2 mt-5 text-ink">Ace the job interview process with mocks</h2>
+        <p class="copy mt-5">Practice makes perfect. Ace your job interviews with curated, regularly updated mock interview sessions, designed by experts to simulate the real experience.</p>
+        <ul class="mt-7 space-y-3.5">
+          <li class="flex gap-3 text-[15px] text-ink"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green"></span>Intensive mock interviews, conducted by experts</li>
+          <li class="flex gap-3 text-[15px] text-ink"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green"></span>Tackle specialty and portfolio related questions</li>
+          <li class="flex gap-3 text-[15px] text-ink"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green"></span>Build a CV that highlights your strengths</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="stories" class="bg-paper py-20 lg:py-28">
+  <div class="container">
+    <span data-reveal class="eyebrow">Testimonials</span>
+    <h2 class="display t-h2 mt-5 max-w-[18ch] text-ink">Hear from our customers, our biggest supporters</h2>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <figure data-reveal class="rounded-card bg-white p-7 ring-1 ring-line">
+        <blockquote class="text-[15px] leading-relaxed text-ink">"I would highly recommend GooCampus. My overall experience has been good. They told me everything I needed to know about the pathway and how to proceed with my journey. Their staff is really supportive and kind."</blockquote>
+        <figcaption class="mt-6"><div class="text-[14px] font-semibold text-ink">Dr Shrey Rana</div><div class="text-[13px] text-body">UK PLAB 2022</div></figcaption>
+      </figure>
+      <figure data-reveal class="rounded-card bg-white p-7 ring-1 ring-line">
+        <blockquote class="text-[15px] leading-relaxed text-ink">"I availed their consulting services and they explained the entire process. Thanks to them, I cleared my OET in the very 1st attempt. Their team is really helpful and supportive, a big thanks to their ops team!"</blockquote>
+        <figcaption class="mt-6"><div class="text-[14px] font-semibold text-ink">Dr Vineela</div><div class="text-[13px] text-body">UK PLAB 2021</div></figcaption>
+      </figure>
+      <figure data-reveal class="rounded-card bg-ink p-7">
+        <blockquote class="text-[15px] leading-relaxed text-white/90">"I've had an amazing journey with GooCampus. They helped me choose the right pathway and their team have made my UK PLAB journey absolutely smooth and stress-free. 100% recommended!"</blockquote>
+        <figcaption class="mt-6"><div class="text-[14px] font-semibold text-white">Dr Chaturya S</div><div class="text-[13px] text-white/60">UK PLAB 2022</div></figcaption>
+      </figure>
+      <figure data-reveal class="rounded-card bg-white p-7 ring-1 ring-line">
+        <blockquote class="text-[15px] leading-relaxed text-ink">"GooCampus has some of the best staff. They're very friendly, efficient and have patience to clear all my doubts, regardless of the time. I'm really lucky to have come across them for my UK PLAB journey."</blockquote>
+        <figcaption class="mt-6"><div class="text-[14px] font-semibold text-ink">Dr Manasa G</div><div class="text-[13px] text-body">UK PLAB 2022</div></figcaption>
+      </figure>
+      <figure data-reveal class="rounded-card bg-white p-7 ring-1 ring-line">
+        <blockquote class="text-[15px] leading-relaxed text-ink">"The entire team of GooCampus is super helpful and supportive at every stage of my UK PLAB journey. Their team keeps me updated on all important matters and explain the pathway very clearly."</blockquote>
+        <figcaption class="mt-6"><div class="text-[14px] font-semibold text-ink">Dr Kanaka V</div><div class="text-[13px] text-body">UK PLAB 2023</div></figcaption>
+      </figure>
+      <figure data-reveal class="rounded-card bg-white p-7 ring-1 ring-line">
+        <blockquote class="text-[15px] leading-relaxed text-ink">"I came across GooCampus while searching for UK PLAB guidance and joined their program. Their team is really supportive and helped me clear my OET with the best coaching. I'd definitely recommend them for UK PLAB."</blockquote>
+        <figcaption class="mt-6"><div class="text-[14px] font-semibold text-ink">Dr Vishal K</div><div class="text-[13px] text-body">UK PLAB 2022</div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- GooCampus Advantage -->
+<section class="py-20 lg:py-28">
+  <div class="container">
+    <span data-reveal class="eyebrow">The GooCampus Advantage</span>
+    <h2 class="display t-h2 mt-5 max-w-[20ch] text-ink">There's a reason doctors call it the 'GooCampus Advantage'</h2>
+
+    <div class="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+      <div data-reveal class="rule pt-7">
+        <h3 class="display t-h3 text-ink">Just a call away</h3>
+        <p class="copy mt-2.5">A single point of contact for any issue — no need to juggle between multiple vendors and organisations.</p>
+      </div>
+      <div data-reveal class="rule pt-7">
+        <h3 class="display t-h3 text-ink">Structured timeline</h3>
+        <p class="copy mt-2.5">Unlike self-preparation, we follow a strict timeline to make sure you complete all major checkpoints on time.</p>
+      </div>
+      <div data-reveal class="rule pt-7">
+        <h3 class="display t-h3 text-ink">No more applications</h3>
+        <p class="copy mt-2.5">Our expert team manages and assists you through all applications and registrations. No more errors.</p>
+      </div>
+      <div data-reveal class="rule pt-7">
+        <h3 class="display t-h3 text-ink">Make your portfolio shine</h3>
+        <p class="copy mt-2.5">Attend interviews with a job-ready portfolio that includes research papers, CPD events, audit &amp; QIP and more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="pb-20 lg:pb-28">
+  <div class="container">
+    <div data-reveal class="rounded-[24px] bg-ink px-8 py-16 text-center lg:px-16 lg:py-20">
+      <h2 class="display t-h2 mx-auto max-w-[18ch] text-white">Get the 'GooCampus Advantage' to kickstart your UK PLAB journey</h2>
+      <div class="mt-9 flex flex-wrap justify-center gap-3">
+        <a href="https://app.fillout.com/t/fkbJzMsWcfus" target="_blank" rel="noopener noreferrer" class="btn w-full bg-white text-ink hover:bg-white/90 sm:w-auto">Download Brochure</a>
+        <a href="https://goocampus.fillout.com/goocampus-free-consultation" target="_blank" rel="noopener noreferrer" class="btn w-full border-2 border-white/25 text-white hover:border-white/50 sm:w-auto">Free Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-line bg-white py-14">
+  <div class="container">
+    <div class="grid gap-12 lg:grid-cols-[1.5fr_1fr_1.2fr]">
+      <div>
+        <img src="assets/logo-color.png" alt="GooCampus UK" width="1134" height="1134" class="h-12 w-auto" />
+        <p class="copy mt-5 max-w-[42ch]">We help medical graduates, from India and abroad, move to the UK to work as full-time doctors through the PLAB pathway.</p>
+      </div>
+      <div>
+        <h3 class="text-[13px] font-semibold uppercase tracking-[.08em] text-ink">Explore</h3>
+        <ul class="mt-5 space-y-3">
+          <li><a href="#program" class="text-[15px] text-body transition hover:text-ink">The Program</a></li>
+          <li><a href="#timeline" class="text-[15px] text-body transition hover:text-ink">How It Works</a></li>
+          <li><a href="#stories" class="text-[15px] text-body transition hover:text-ink">Stories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-[13px] font-semibold uppercase tracking-[.08em] text-ink">Get in touch</h3>
+        <ul class="mt-5 space-y-3">
+          <li><a href="https://goocampus.fillout.com/goocampus-free-consultation" target="_blank" rel="noopener noreferrer" class="text-[15px] text-body transition hover:text-ink">Free Consultation</a></li>
+          <li><a href="mailto:info@goocampus.in" class="text-[15px] text-body transition hover:text-ink">info@goocampus.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule mt-14 flex flex-col gap-2 pt-8 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-[14px] text-body">© 2026 GooCampus. All rights reserved.</p>
+      <p class="text-[14px] text-body">GooCampus Edu Solutions Private Limited</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
+  t && t.addEventListener('click', () => {
+    const open = m.classList.toggle('hidden') === false;
+    t.setAttribute('aria-expanded', String(open));
+  });
+  m && m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    m.classList.add('hidden'); t.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Nav condenses once you leave the hero.
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('shadow-[0_1px_0_0_rgba(35,57,116,.08)]', scrollY > 12);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Below-fold reveals: IntersectionObserver, not scroll-position math. Elements are
+  // visible by default in their resting CSS — [data-reveal] carries no hidden state of
+  // its own — so if this script never runs (blocked, error, reduced motion) nothing is
+  // ever stranded invisible. The .rise-in class only adds a temporary animated dip from
+  // hidden back to the resting visible state; it never defines the resting state itself.
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealTargets = [...document.querySelectorAll('[data-reveal]')];
+
+  if (!reduce && revealTargets.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.filter(e => e.isIntersecting).forEach((e, i) => {
+        e.target.style.animationDelay = (i * 0.06) + 's';
+        e.target.classList.add('rise-in');
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+    revealTargets.forEach(el => io.observe(el));
+  }
+</script>
+</body>
+</html>
